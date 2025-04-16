@@ -12,4 +12,5 @@ To start backend:
 
 ```
 cd backend
+python ./movies/manage.py runserver
 ```
