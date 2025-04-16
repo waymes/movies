@@ -1,22 +1,20 @@
-<script setup lang="ts">
-// import HelloWorld from './components/HelloWorld.vue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <h1 class="my-5 text-center">Login</h1>
   <form class="login-form mx-auto text-bg-light px-3 py-5">
     <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <label for="email" class="form-label">Email address</label>
       <input
         type="email"
         class="form-control"
-        id="exampleInputEmail1"
+        id="email"
         aria-describedby="emailHelp"
       />
     </div>
     <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" />
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" />
     </div>
     <button type="submit" class="btn btn-primary w-100 mt-3">Login</button>
   </form>

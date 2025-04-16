@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Movie } from '../types/movie';
+import { type Movie } from '../types/movie';
 
 const { movie } = defineProps<{
   movie: Movie;

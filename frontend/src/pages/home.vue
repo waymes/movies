@@ -22,6 +22,10 @@ const movies = [
 <template>
   <h1 class="my-5 text-center">Movies list</h1>
   <ul class="list-group">
-    <MovieListItem v-for="movie in movies" :movie="movie" />
+    <MovieListItem
+      v-for="movie in movies"
+      :key="movie.id"
+      :movie="movie"
+    ></MovieListItem>
   </ul>
 </template>

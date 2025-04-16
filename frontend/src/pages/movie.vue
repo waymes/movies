@@ -1,13 +1,20 @@
 <script setup lang="ts">
-import { Movie } from '../types/movie';
+import { ref } from 'vue';
+import { type Movie } from '../types/movie';
+import MovieEditForm from '../components/movie-edit-form.vue';
 
-const movie = {
+const movie: Movie = {
   id: 1,
   title: 'Rambo',
   description: 'Another cool action movie.',
   image:
     'https://upload.wikimedia.org/wikipedia/en/d/d6/First_blood_poster.jpg',
 };
+
+const modalState = ref(false);
+function toggleModal() {
+  modalState.value = !modalState.value;
+}
 </script>
 
 <template>
@@ -21,9 +28,18 @@ const movie = {
       <h3>{{ movie.title }}</h3>
       <p>{{ movie.description }}</p>
     </div>
-    <button type="button" class="btn btn-light edit ms-auto">
+    <button
+      @click="toggleModal"
+      type="button"
+      class="btn btn-light edit ms-auto"
+    >
       Edit <i class="bi bi-pencil-square ms-2 edit-icon"></i>
     </button>
+    <MovieEditForm
+      :show="modalState"
+      :movie="movie"
+      :closeModal="toggleModal"
+    />
   </div>
 </template>
 
