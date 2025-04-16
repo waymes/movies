@@ -1,10 +1,6 @@
 <script setup lang="ts">
-interface Movie {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-}
+import { Movie } from '../types/movie';
+
 const { movie } = defineProps<{
   movie: Movie;
 }>();
@@ -17,7 +13,11 @@ const { movie } = defineProps<{
       :style="{ backgroundImage: 'url(' + movie.image + ')' }"
     />
     <div class="ms-3">
-      <h3>{{ movie.title }}</h3>
+      <h4>
+        <RouterLink class="link" :to="'/movies/' + movie.id">{{
+          movie.title
+        }}</RouterLink>
+      </h4>
       <p>{{ movie.description }}</p>
     </div>
   </li>
@@ -26,7 +26,12 @@ const { movie } = defineProps<{
 <style scoped>
 .movie:hover {
   background: #f8f9fa;
-  cursor: pointer;
+}
+.link {
+  text-decoration: none;
+}
+.link:hover {
+  text-decoration: underline;
 }
 .image {
   width: 100px;
